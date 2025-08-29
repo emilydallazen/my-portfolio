@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Sacramento&display=swap");
+
 /* ==============================
    RESET BÁSICO
 ================================= */
@@ -30,35 +33,35 @@ a:hover {
    VARIÁVEIS DE TEMA (CLARO)
 ================================= */
 :root {
-  --background: #f5f5dc; /* bege claro */
+  --background: #f7f7df; /* bege claro */
   --foreground: #2d2d2d; /* cinza escuro para texto */
   --card: #ffffff;
   --card-foreground: #2d2d2d;
   --popover: #ffffff;
   --popover-foreground: #2d2d2d;
-  --primary: #BFDCA2; /* verde claro igual ao gradiente */
-  --primary-foreground: #2d2d2d; /* texto escuro na navbar verde */
+  --primary: #b8d49d; /* verde claro igual ao gradiente */
+  --primary-foreground: #000000; /* texto escuro na navbar verde */
   --secondary: #e6e6e6;
-  --secondary-foreground: #2d2d2d;
+  --secondary-foreground: #080808;
   --muted: #f0f0f0;
   --muted-foreground: #666666;
-  --accent: #aed490; /* verde claro solicitado */
+  --accent: #b8d49d; /* verde claro solicitado */
   --accent-foreground: #2d2d2d;
   --destructive: #cc4a4a;
   --destructive-foreground: #fff;
   --border: #d4c4a8;
   --input: #ffffff;
-  --ring: rgba(174, 212, 144, 0.3); /* ring com cor do accent */
+  --ring: rgba(184, 212, 157, 0.3); /* ring com cor do accent */
 
   --radius: 0.75rem;
-  --sidebar: #f5f5dc;
+  --sidebar: #F5F5DC;
   --sidebar-foreground: #2d2d2d;
-  --sidebar-primary: #B6D899;
+  --sidebar-primary: #b8d49d;
   --sidebar-primary-foreground: #2d2d2d;
-  --sidebar-accent: #aed490;
+  --sidebar-accent: #b8d49d;
   --sidebar-accent-foreground: #2d2d2d;
   --sidebar-border: #d4c4a8;
-  --sidebar-ring: rgba(174, 212, 144, 0.3);
+  --sidebar-ring: rgba(184, 212, 157, 0.3);
 }
 
 /* ==============================
@@ -97,8 +100,6 @@ a:hover {
 /* ==============================
    FONTES
 ================================= */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
 .serif-font {
   font-family: "Playfair Display", serif;
@@ -131,8 +132,7 @@ a:hover {
 
 .polaroid-shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
-              0 6px 20px rgba(0, 0, 0, 0.05), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.6);
+              0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 .vintage-border {
@@ -141,32 +141,26 @@ a:hover {
   position: relative;
 }
 
-.vintage-border::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: var(--radius);
-  pointer-events: none;
-}
-
 /* ==============================
    CLASSES UTILITÁRIAS (TAILWIND-LIKE)
 ================================= */
 .min-h-screen { min-height: 100vh; }
 .h-screen { height: 100vh; }
+.h-0\.5 { height: 0.125rem; }
 .h-1 { height: 0.25rem; }
+.h-8 { height: 2rem; }
 .h-10 { height: 2.5rem; }
 .h-12 { height: 3rem; }
 .h-16 { height: 4rem; }
 .h-48 { height: 12rem; }
 .h-80 { height: 20rem; }
+.h-96 { height: 24rem; }
+.h-100 { height: 25rem; }
 .h-full { height: 100%; }
 .h-auto { height: auto; }
 
+.w-6 { width: 1.5rem; }
+.w-8 { width: 2rem; }
 .w-10 { width: 2.5rem; }
 .w-12 { width: 3rem; }
 .w-16 { width: 4rem; }
@@ -177,14 +171,18 @@ a:hover {
 .max-w-4xl { max-width: 56rem; }
 .max-w-6xl { max-width: 72rem; }
 .max-w-md { max-width: 28rem; }
+.max-w-full { max-width: 100%; }
 
 .mx-auto { margin-left: auto; margin-right: auto; }
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 .mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
 .mb-16 { margin-bottom: 4rem; }
 .mt-8 { margin-top: 2rem; }
+.space-y-1 > * + * { margin-top: 0.25rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
 
 .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
 .px-4 { padding-left: 1rem; padding-right: 1rem; }
@@ -233,10 +231,18 @@ a:hover {
 .space-y-4 > * + * { margin-top: 1rem; }
 .space-y-6 > * + * { margin-top: 1.5rem; }
 
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-shrink-0 { flex-shrink: 0; }
+.gap-3 { gap: 0.75rem; }
+.gap-6 { gap: 1.5rem; }
 .gap-4 { gap: 1rem; }
 .gap-8 { gap: 2rem; }
 .gap-12 { gap: 3rem; }
 
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
 .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .bg-cover { background-size: cover; }
@@ -273,11 +279,20 @@ a:hover {
 .border-b-2 { border-bottom-width: 2px; border-bottom-style: solid; }
 .border-t { border-top-width: 1px; }
 
+.opacity-0 { opacity: 0; }
 .opacity-20 { opacity: 0.2; }
+.opacity-100 { opacity: 1; }
+.max-h-0 { max-height: 0; }
+.max-h-64 { max-height: 16rem; }
 .blur-sm { filter: blur(4px); }
 
 .transform { transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1); }
+.rotate-1 { transform: rotate(1deg); }
 .rotate-2 { transform: rotate(2deg); }
+.rotate-45 { transform: rotate(45deg); }
+.-rotate-45 { transform: rotate(-45deg); }
+.translate-y-2 { transform: translateY(0.5rem); }
+.-translate-y-2 { transform: translateY(-0.5rem); }
 
 .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
 .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
@@ -303,11 +318,11 @@ a:hover {
 .bg-muted { background-color: var(--muted); }
 
 /* Transparências */
-.bg-primary\/95 { background-color: rgba(174, 212, 144, 0.95); } /* navbar verde com transparência */
+.bg-primary\/95 { background-color: rgba(184, 212, 157, 0.95); } /* navbar verde com transparência */
 .bg-muted\/30 { background-color: rgba(240, 240, 240, 0.3); }
-.bg-accent\/10 { background-color: rgba(174, 212, 144, 0.1); }
-.bg-accent\/20 { background-color: rgba(174, 212, 144, 0.2); }
-.bg-accent\/30 { background-color: rgba(174, 212, 144, 0.3); }
+.bg-accent\/10 { background-color: rgba(184, 212, 157, 0.1); }
+.bg-accent\/20 { background-color: rgba(184, 212, 157, 0.2); }
+.bg-accent\/30 { background-color: rgba(184, 212, 157, 0.3); }
 .bg-secondary\/40 { background-color: rgba(230, 230, 230, 0.4); }
 .text-primary-foreground\/60 { color: rgba(245, 245, 220, 0.6); }
 .text-primary-foreground\/80 { color: rgba(245, 245, 220, 0.8); }
@@ -332,7 +347,7 @@ a:hover {
 .hover\:text-secondary-foreground:hover { color: var(--secondary-foreground); }
 .hover\:bg-accent:hover { background-color: var(--accent); }
 .hover\:text-accent-foreground:hover { color: var(--accent-foreground); }
-.hover\:bg-accent\/20:hover { background-color: rgba(174, 212, 144, 0.2); }
+.hover\:bg-accent\/20:hover { background-color: rgba(184, 212, 157, 0.2); }
 .hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
 .hover\:scale-105:hover { transform: scale(1.05); }
 .hover\:rotate-0:hover { transform: rotate(0deg); }
@@ -359,16 +374,48 @@ a:hover {
 .focus\:ring-ring:focus { box-shadow: 0 0 0 2px var(--ring); }
 
 /* Media queries */
+@media (min-width: 640px) {
+  .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .sm\:py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+  .sm\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+  .sm\:text-base { font-size: 1rem; line-height: 1.5rem; }
+  .sm\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+  .sm\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sm\:h-12 { height: 3rem; }
+  .sm\:h-96 { height: 24rem; }
+  .sm\:w-24 { width: 6rem; }
+  .sm\:mb-6 { margin-bottom: 1.5rem; }
+  .sm\:mb-8 { margin-bottom: 2rem; }
+  .sm\:p-6 { padding: 1.5rem; }
+  .sm\:p-8 { padding: 2rem; }
+}
+
 @media (min-width: 768px) {
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
   .md\:text-7xl { font-size: 4.5rem; line-height: 1; }
   .md\:text-8xl { font-size: 6rem; line-height: 1; }
   .md\:justify-start { justify-content: flex-start; }
+  .md\:flex { display: flex; }
+  .md\:hidden { display: none; }
+  .md\:order-1 { order: 1; }
+  .md\:order-2 { order: 2; }
 }
 
 @media (min-width: 1024px) {
   .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lg\:text-5xl { font-size: 3rem; line-height: 1; }
+  .lg\:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+  .lg\:mb-16 { margin-bottom: 4rem; }
+  .lg\:gap-8 { gap: 2rem; }
+  .lg\:gap-12 { gap: 3rem; }
+  .lg\:order-1 { order: 1; }
+  .lg\:order-2 { order: 2; }
+  .lg\:rotate-2 { transform: rotate(2deg); }
+  .lg\:h-100 { height: 25rem; }
+  .lg\:mx-0 { margin-left: 0; margin-right: 0; }
 }
 
 /* ==============================
@@ -422,6 +469,60 @@ a:hover {
    CORREÇÕES ESPECÍFICAS PARA BOTÕES
 ================================= */
 
+/* Estilo geral para botões */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botões com vintage-border */
+button.vintage-border {
+  border: 2px solid var(--border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button.vintage-border:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Botão "Ver detalhes" nos cards do projeto */
+.project-card-button {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-card-button:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Botão "Voltar ao Portfólio" */
+.back-button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 /* Botão "Ver detalhes" na seção Portfolio */
 #portfolio .bg-card button {
   color: var(--primary) !important;
@@ -436,13 +537,13 @@ a:hover {
 
 /* Botões de redes sociais */
 .vintage-border.bg-accent\/10 {
-  background-color: rgba(174, 212, 144, 0.1);
+  background-color: rgba(184, 212, 157, 0.1);
   border: 1px solid var(--border);
   cursor: pointer;
 }
 
 .vintage-border.bg-accent\/10:hover {
-  background-color: rgba(174, 212, 144, 0.2);
+  background-color: rgba(184, 212, 157, 0.2);
 }
 
 /* Botão principal "Vamos conversar" */
@@ -455,11 +556,6 @@ a:hover {
 .vintage-border.bg-secondary {
   cursor: pointer;
   border: 2px solid var(--border);
-}
-
-/* Adicionar cursor pointer para todos os botões */
-button {
-  cursor: pointer;
 }
 
 /* Fix para botões em cartões escuros */
@@ -492,12 +588,20 @@ nav a.border-b-2 {
 }
 
 /* Melhorar a transição dos links da navbar */
+nav ul {
+  justify-content: flex-end !important; /* alinha à direita */
+  width: auto;
+}
+
 nav ul li a {
   text-decoration: none;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   display: inline-block;
+  font-size: 1.125rem !important; /* texto maior */
+  font-weight: 700 !important; /* texto mais forte/negrito */
+  margin: 0 1.5rem !important; /* espaçamento maior entre opções */
 }
 
 nav ul li a:hover {
@@ -515,6 +619,189 @@ nav ul li a:visited,
 nav ul li a:hover,
 nav ul li a:active {
   text-decoration: none;
+}
+
+/* Restaurar o layout original da navbar */
+nav .flex.items-center.justify-between {
+  justify-content: space-between !important;
+  position: relative;
+}
+
+/* Remover espaçamento entre itens da lista */
+nav ul.flex {
+  margin: 0 !important;
+  gap: 0 !important; /* remove gaps */
+  list-style: none !important; /* remove pontos das listas */
+}
+
+nav ul.flex > * + * {
+  margin-left: 0 !important;
+}
+
+/* Garantir que não apareçam pontos ou separadores */
+nav ul li {
+  list-style-type: none !important;
+  list-style: none !important;
+}
+
+nav ul li::before {
+  content: none !important;
+}
+
+nav ul li::after {
+  content: none !important;
+}
+
+/* ==============================
+   ESTILOS ESPECÍFICOS PARA HERO
+================================= */
+
+/* Hero Section - Fundo bege com layout horizontal */
+.hero-section {
+  background-color: #F5F5DC; /* fundo bege */
+  min-height: 100vh;
+  padding-top: 80px; /* espaço para navbar fixa */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+/* Imagem */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.05);
+}
+
+/* Conteúdo de texto */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero-title img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.hero-btn {
+  background-color: #2d2d2d;
+  color: #F5F5DC;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 45, 45, 0.2);
+}
+
+.hero-btn:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(45, 45, 45, 0.3);
+}
+
+/* Responsividade para tablets */
+@media (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 0 2rem;
+  }
+  
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .hero-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .image-wrapper {
+    max-width: 400px;
+  }
+}
+
+/* Responsividade para desktop */
+@media (min-width: 1024px) {
+  .hero-container {
+    gap: 4rem;
+  }
+  
+  .hero-title {
+    font-size: 4.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .image-wrapper {
+    max-width: 450px;
+  }
 }
 
 /* ==============================
@@ -555,19 +842,19 @@ header .text-muted-foreground {
 /* Botão na seção header com fundo verde */
 header button.bg-primary {
   background-color: #000000 !important;
-  color: #f5f5dc !important;
+  color: #F5F5DC !important;
   border: 2px solid #000000 !important;
 }
 
 header button.bg-primary:hover {
   background-color: #333333 !important;
-  color: #f5f5dc !important;
+  color: #F5F5DC !important;
 }
 
 /* Botão "Vamos conversar" com efeito pulsante */
 header .pulse-animation {
   background-color: #000000 !important;
-  color: #f5f5dc !important;
+  color: #F5F5DC !important;
   border: 2px solid #000000 !important;
   transition: all 0.3s ease;
 }
@@ -579,23 +866,20 @@ header .pulse-animation:hover {
 }
 
 /* Container da imagem do header - manter fundo transparente */
-.header-image-container .vintage-border {
+.header-image-container {
   background: transparent !important;
-  border: none;
-  box-shadow: none;
 }
 
-.header-image-container .vintage-border::before {
-  display: none;
-}
-
-/* Efeito hover para a imagem do header */
 .header-image-container img {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .header-image-container:hover img {
-  transform: scale(1.02);
+  transform: scale(1.05);
   filter: brightness(1.05);
 }
 
@@ -618,4 +902,39 @@ header .pulse-animation:hover {
   }
 }
 
-/* ...existing code... */
+/* ==============================
+   CORREÇÕES ESPECÍFICAS PARA CARDS DO PORTFÓLIO
+================================= */
+
+/* Garantir que os cards não tenham elementos sobrepostos */
+#portfolio .vintage-border {
+  background-color: var(--card);
+  isolation: isolate;
+  position: relative;
+  z-index: 1;
+}
+
+/* Remover qualquer pseudo-elemento que possa estar criando sobreposição */
+#portfolio .vintage-border::before,
+#portfolio .vintage-border::after {
+  display: none !important;
+}
+
+/* Garantir que o grid não cause sobreposições */
+#portfolio .grid {
+  isolation: isolate;
+}
+
+/* Melhorar a aparência geral dos cards */
+#portfolio .bg-card {
+  background-color: var(--card) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.shadow-lg { 
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+}
+
+.border-2 { border-width: 2px; border-style: solid; }
